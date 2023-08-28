@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" name="password" placeholder=" Password" required>
+                    </div>
+    <button type="submit">LOGIN</button>
+</form>
+
+</script>
+
+{% if error == "no" %}
+     <script>
+	   alert('Logged In Successfully');
+       window.location=('{% url 'dashbord' %}');
+     </script>
+{% endif %}
+
+{% if error == "yes" %}
+     <script>
+	    alert('Invalid Credential, Try Again');
+     </script>
+{% endif %}
+
+
+</body>
+</html>

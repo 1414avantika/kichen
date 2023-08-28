@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Data</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in data %}
+            <tr>
+                <td>{{ entry.empl }}</td>
+                <td>{{ entry.Data }}</td>
+                <td>{{ entry.timestamp }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

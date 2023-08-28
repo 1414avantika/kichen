@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{request.user.username}}</h1>
+            <form method="POST">
+              {% csrf_token %}
+                <label for="yesno">Select Yes or No:</label>
+                <select name="yesno" id="yesno">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                {% if current_time >= disable_until %}
+                <button type="submit" id="submitBtn">Submit</button>
+                {% endif %}
+                current -  {{current_time}}
+        last card -{{disable_until}}
+            </form>
+<h1>remaining Days:- {{remainingdays}}</h1>
+<h1>remaining coupens :- {{remaining_coupens}}</h1>
+{% for i in s %}
+<h1>start data :- {{i.start_date}}</h1>
+<h1>End data :- {{i.end_date}}</h1>
+{% endfor %}
+</body>
+</html>

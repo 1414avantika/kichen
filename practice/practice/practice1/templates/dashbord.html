@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.widget {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+         <div class="widget" id="widget1">
+             <a href=""><h2> Profile</h2></a>
+            <div class="content" id="widget1Content"></div>
+         </div>
+        <div class="widget" id="widget2">
+            <a href="/Coupens"><h2>Coupens</h2></a>
+            <div class="content" id="widget2Content"></div>
+        </div>
+    </div>
+    <script src="script.js">
+        document.addEventListener("DOMContentLoaded", function () {
+    // Simulate data for widgets
+    const widget1Data = "Widget 1 Content";
+    const widget2Data = "Widget 2 Content";
+
+    // Update widget content
+    document.getElementById("widget1Content").textContent = widget1Data;
+    document.getElementById("widget2Content").textContent = widget2Data;
+});
+
+    </script>
+<h1>{{request.user.username}}</h1>
+</body>
+
+</html>
